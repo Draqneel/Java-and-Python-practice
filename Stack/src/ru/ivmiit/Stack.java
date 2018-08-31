@@ -15,9 +15,5 @@ public class Stack {
     public void pop() {
         tail = tail.getLink();
     }
-
-    public int getLast() {
-        return tail.getValue();
-    }
     // nodes indicate to previous node
 }
