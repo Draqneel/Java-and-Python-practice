@@ -31,6 +31,8 @@ public class Main {
             map.put((char) i, 0);
         }
         for (int i = 0; i < arr.length; i++) {
+            // calculating high register letters
+            // or cast low register to high and calculate too
             if (map.get(arr[i]) != null) {
                 value = (int) map.get(arr[i]);
                 value++;
@@ -41,6 +43,8 @@ public class Main {
                 map.put((char) (arr[i] - 32), value);
             }
         }
+        //checking collection of counters
+        //if the letter occurs more than once - it's not isogram
         for (int i = 0; i < arr.length; i++) {
             if ((int) map.get(arr[i]) > 1) {
                 return false;
