@@ -1,3 +1,4 @@
+
 package ru.ivmiit;
 
 /**
@@ -22,6 +23,7 @@ public class Main {
     /**
      * @param n the number from which we want to take factorial
      * @return factorial of n
+     * @throws IllegalArgumentException - if n variable don't included in range of values
      */
     public static int factorial(int n) {
         if (n < 0 || n > 12) {
