@@ -30,7 +30,7 @@ public class Main {
         pattern[4] = ')';
         pattern[5] = ' ';
         pattern[9] = '-';
-        // fill result the String with the required data
+        // fill result String with the required data
         for (int i = 0; i < pattern.length; i++) {
             if (pattern[i] != 0) {
                 result = result + pattern[i];
