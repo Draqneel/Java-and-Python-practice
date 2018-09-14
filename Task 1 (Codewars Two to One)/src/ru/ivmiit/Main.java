@@ -1,16 +1,16 @@
 package ru.ivmiit;
 
-import java.util.Scanner;
-
+/**
+ * SPECIFICATION
+ * Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible,
+ * containing distinct letters,each taken only once - coming from s1 or s2.
+ * #Examples: ``` a = "xyaabbbccccdefww" b = "xxxxyyyyabklmopq" longest(a, b) -> "abcdefklmopqwxy"
+ *
+ * @author Draqneel
+ */
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Add 1st string");
-        String a = scanner.nextLine();
-        System.out.println("Add 2nd string");
-        String b = scanner.nextLine();
-        System.out.println(twoToOne(a, b));
     }
 
     public static String twoToOne(String a, String b) {
@@ -21,7 +21,9 @@ public class Main {
         String result = "";
         int test = MIN_VALUE;
         char[] array = string.toCharArray();
+        // check all letters in ABC if it has in "glued" String - add to result
         for (int i = 0; i < MAX_ITERATION_COUNT; i++) {
+            // test on correct input
             if (array[i] < MIN_VALUE || array[i] > MAX_VALUE) {
                 return "incorrect string";
             }
@@ -32,6 +34,7 @@ public class Main {
                 }
             }
             test++;
+            // if we checked all ABC - break the loop
             if (test > MAX_VALUE) {
                 break;
             }
@@ -39,9 +42,3 @@ public class Main {
         return result;
     }
 }
-
-/* SPECIFICATION
-* Take 2 strings s1 and s2 including only letters from ato z. Return a new sorted string, the longest possible,
-* containing distinct letters,each taken only once - coming from s1 or s2.
-* #Examples: ``` a = "xyaabbbccccdefww" b = "xxxxyyyyabklmopq" longest(a, b) -> "abcdefklmopqwxy"
-*/
