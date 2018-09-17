@@ -1,9 +1,12 @@
 package ru.ivmiit;
 
+/**
+ * Structural unit of Stack
+ */
 public class Node {
     private int value;
     private Node link;
-
+    // constructor
     public Node(int value) {
         this.value = value;
     }
