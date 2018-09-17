@@ -1,5 +1,11 @@
 package ru.ivmiit;
 
+/**
+ * SPECIFICATION
+ * wiki: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+ *
+ * @author Draqneel
+ */
 public class Queue {
     private Node root;
     private Node tail;
@@ -14,7 +20,7 @@ public class Queue {
         return null;
     }
 
-    public void push (Node node) {
+    public void push(Node node) {
         if (root == null) {
             root = node;
             tail = node;
@@ -25,17 +31,17 @@ public class Queue {
         }
     }
 
-    public Node peek () {
+    public Node peek() {
         return root;
     }
 
-    public Node poll () {
+    public Node poll() {
         temp = root;
         root = root.getLink();
         return temp;
     }
 
-    public Node remove () {
+    public Node remove() {
         if (root != null) {
             temp = root;
             root = root.getLink();

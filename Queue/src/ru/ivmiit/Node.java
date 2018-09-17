@@ -1,5 +1,8 @@
 package ru.ivmiit;
 
+/**
+ * Structure node of Queue
+ */
 public class Node {
     private int value;
     private Node link;
