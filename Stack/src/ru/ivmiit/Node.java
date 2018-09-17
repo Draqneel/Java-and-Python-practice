@@ -1,5 +1,8 @@
 package ru.ivmiit;
 
+/**
+ * Structural unit of Stack
+ */
 public class Node {
     private int value;
     private Node link;
