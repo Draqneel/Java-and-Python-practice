@@ -1,25 +1,55 @@
 package ru.ivmiit;
 
+/**
+ * SPECIFICATION
+ * Binary search wiki: https://en.wikipedia.org/wiki/Binary_search_algorithm
+ * Bubble sort wiki: https://en.wikipedia.org/wiki/Bubble_sort
+ *
+ * @author Draqneel
+ */
 public class Main {
-
+    /**
+     * Binary search with recursion
+     *
+     * @param arr   - input collection
+     * @param left  - left border
+     * @param right - right border
+     * @param value - searching value
+     * @return index of searching value
+     */
     public static int searchRec(int[] arr, int left, int right, int value) {
+        // calculate index of middle element
         int mid = (left + right) / 2;
+        // test on correct -2 - default error value
         if (left > right || arr[right] < value) {
             return -2;
         }
+        // if value more then value with middle index - shift the border to the left
         if (arr[mid] > value) {
             return searchRec(arr, left, mid, value);
         }
+        // if value more then value with middle index - shift the border to the right
         if (arr[mid] < value) {
             return searchRec(arr, mid, right, value);
         }
         if (arr[mid] == value) {
             return mid;
         }
+        // return default value
         return -2;
     }
 
-    public static int searchImp(int[] arr, int value) {
+    /**
+     * Binary search with iterative style
+     *
+     * @param arr   - input collection
+     * @param value - searching value
+     * @return index of searching value
+     */
+    public static int searchItr(int[] arr, int value) {
+        /**
+         * @link ru.ivmiit.Main#searchRec() - you can see the comments
+         */
         int left = 0;
         int right = arr.length - 1;
         while (left < right) {
@@ -38,7 +68,10 @@ public class Main {
         return -2;
     }
 
-
+    /**
+     * Bubble sort realization
+     * @param arr - input collection
+     */
     public static void sort(int[] arr) {
         int temp;
         for (int i = arr.length - 1; i > 0; i--) {
@@ -53,12 +86,5 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int a[] = {10, 9, 8, 7, 6, 5};
-        sort(a);
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
-        int result = searchImp(a, 9);
-        System.out.println(result);
     }
 }
