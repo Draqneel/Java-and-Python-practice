@@ -28,8 +28,8 @@ public class UsersRepository {
                     resultSet.getString("surname"),
                     resultSet.getString("patronymic"),
                     resultSet.getString("city"),
-                    resultSet.getString("birthdate"),
-                    resultSet.getString("registrationdate"),
+                    resultSet.getDate("birthdate"),
+                    resultSet.getDate("registrationdate"),
                     resultSet.getString("phonenumber"));
         }
     };

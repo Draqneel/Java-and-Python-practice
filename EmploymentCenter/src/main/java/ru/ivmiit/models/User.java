@@ -1,18 +1,20 @@
 package ru.ivmiit.models;
 
 
+import java.sql.Date;
+
 public class User {
     private long id;
     private String name;
     private String surname;
     private String patronymic;
     private String city;
-    private String birthDate;
-    private String registrationDate;
+    private Date birthDate;
+    private Date registrationDate;
     private String phoneNumber;
 
-    public User(long id, String name, String surname, String patronymic, String city, String birthDate,
-                String registrationDate, String phoneNumber) {
+    public User(long id, String name, String surname, String patronymic, String city, Date birthDate,
+                Date registrationDate, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -31,8 +33,8 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", city='" + city + '\'' +
-                ", birthDate=" + birthDate +
-                ", registrationDate=" + registrationDate +
+                ", birthDate=" + birthDate.toString() +
+                ", registrationDate=" + registrationDate.toString() +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
@@ -61,11 +63,11 @@ public class User {
         this.patronymic = patronymic;
     }
 
-    public String getRegistrationDate() {
+    public Date getRegistrationDate() {
         return registrationDate;
     }
 
-    public void setRegistrationDate(String registrationDate) {
+    public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
 
@@ -86,11 +88,11 @@ public class User {
         this.city = city;
     }
 
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
