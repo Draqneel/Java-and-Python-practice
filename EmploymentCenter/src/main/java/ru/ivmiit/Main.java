@@ -10,17 +10,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public static void main(String[] args) throws Exception {
-         /*
-    private static final String URL = "jdbc:postgresql://localhost:5432/employment_center_db";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "MY_PASSWORD";
-
-    DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl(URL);
-        dataSource.setUsername(USER);
-        dataSource.setPassword(PASSWORD);
-        UsersRepository repository = new UsersRepository(dataSource);
-     */
         launch(args);
     }
 

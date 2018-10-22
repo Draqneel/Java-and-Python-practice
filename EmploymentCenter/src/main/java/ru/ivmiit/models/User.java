@@ -12,9 +12,11 @@ public class User {
     private Date birthDate;
     private Date registrationDate;
     private String phoneNumber;
+    private String login;
+    private String hashpassword;
 
     public User(long id, String name, String surname, String patronymic, String city, Date birthDate,
-                Date registrationDate, String phoneNumber) {
+                Date registrationDate, String phoneNumber, String login, String hashpassword) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -23,6 +25,8 @@ public class User {
         this.birthDate = birthDate;
         this.registrationDate = registrationDate;
         this.phoneNumber = phoneNumber;
+        this.login = login;
+        this.hashpassword = hashpassword;
     }
 
     @Override
@@ -33,9 +37,11 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", city='" + city + '\'' +
-                ", birthDate=" + birthDate.toString() +
-                ", registrationDate=" + registrationDate.toString() +
+                ", birthDate=" + birthDate +
+                ", registrationDate=" + registrationDate +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", login='" + login + '\'' +
+                ", hashpassword='" + hashpassword + '\'' +
                 '}';
     }
 
@@ -96,4 +102,19 @@ public class User {
         this.birthDate = birthDate;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getHashpassword() {
+        return hashpassword;
+    }
+
+    public void setHashpassword(String hashpassword) {
+        this.hashpassword = hashpassword;
+    }
 }

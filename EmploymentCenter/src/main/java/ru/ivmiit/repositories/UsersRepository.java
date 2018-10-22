@@ -30,15 +30,17 @@ public class UsersRepository {
                     resultSet.getString("city"),
                     resultSet.getDate("birthdate"),
                     resultSet.getDate("registrationdate"),
-                    resultSet.getString("phonenumber"));
+                    resultSet.getString("phonenumber"),
+                    resultSet.getString("login"),
+                    resultSet.getString("hashpassword"));
         }
     };
 
 
     //language=SQL
     private static final String SQL_INSERT_USER =
-            "INSERT INTO users(name, surname, patronymic, city, birthdate, registrationdate, phonenumber) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            "INSERT INTO users(name, surname, patronymic, city, birthdate, registrationdate, phonenumber, login, hashpassword) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     //language=SQL
     private static final String SQL_SELECT_ALL =
@@ -47,6 +49,10 @@ public class UsersRepository {
     //language=SQL
     private static final String SQL_FIND_BY_ID =
             "SELECT * FROM users WHERE id = ?";
+
+    //language=SQL
+    private static final String SQL_FIND_BY_LOGIN =
+            "SELECT * FROM users WHERE login = ?";
 
     public UsersRepository(DataSource dataSource) {
         this.template = new JdbcTemplate(dataSource);
@@ -58,12 +64,15 @@ public class UsersRepository {
 
     public void setUser(User user) {
         template.update(SQL_INSERT_USER, user.getName(), user.getSurname(), user.getPatronymic(), user.getCity(),
-                user.getBirthDate(), user.getRegistrationDate(), user.getPhoneNumber());
+                user.getBirthDate(), user.getRegistrationDate(), user.getPhoneNumber(), user.getLogin(), user.getHashpassword());
     }
 
     public User getUserById(long id) {
         return template.queryForObject(SQL_FIND_BY_ID, rowMapper, id);
     }
+
+    public User getUserByLogin(String login) {
+        return template.queryForObject(SQL_FIND_BY_LOGIN, rowMapper, login);
+    }
+
 }
-
-
