@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.TableController">
+   <children>
+      <SplitPane dividerPositions="0.5961923847695391" prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="usersTable" layoutX="6.0" layoutY="14.0" prefHeight="598.0" prefWidth="293.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="userName" prefWidth="75.0" text="Имя" />
+                      <TableColumn fx:id="userPatronymic" prefWidth="75.0" text="Отчество" />
+                        <TableColumn fx:id="userCity" prefWidth="75.0" text="Город" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="610.0">
+               <children>
+                  <Label layoutX="65.0" layoutY="14.0" prefHeight="35.0" prefWidth="270.0" text="Детальная информация">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="1.0" layoutY="73.0" prefHeight="526.0" prefWidth="399.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints />
+                      <RowConstraints />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text="Номер телефона :" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text=" Фамилия :" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text="Отчество :" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text="Город :" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text="Возраст :" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text=" Имя :" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="59.0" prefWidth="209.0" text=" Обо мне :" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nameLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="surnameLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="patronymicLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="cityLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="ageLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="numberLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Label fx:id="dataLabel" prefHeight="101.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     </children>
+                  </GridPane>
+                  <Line endX="100.0" layoutX="301.0" layoutY="73.0" startX="-300.0" />
+               </children>
+              <Button fx:id="cancelBtn" layoutX="354.0" layoutY="16.0" mnemonicParsing="false" onAction="#cancelBtnAction" text="&lt;" />
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

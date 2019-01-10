@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.SignUpController">
+   <children>
+      <TextField fx:id="nameField" layoutX="34.0" layoutY="46.0" prefHeight="44.0" prefWidth="187.0" promptText="Имя">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <TextField fx:id="surnameField" layoutX="278.0" layoutY="46.0" prefHeight="44.0" prefWidth="187.0" promptText="Фамилия">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <TextField fx:id="patronymicField" layoutX="522.0" layoutY="46.0" prefHeight="44.0" prefWidth="187.0" promptText="Отчество">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <TextField fx:id="cityField" layoutX="34.0" layoutY="117.0" prefHeight="44.0" prefWidth="284.0" promptText="Город">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <TextField fx:id="dateField" layoutX="34.0" layoutY="190.0" prefHeight="44.0" prefWidth="284.0" promptText="ГГГГ-ММ-ДД">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <TextField fx:id="numberField" layoutX="34.0" layoutY="262.0" prefHeight="44.0" prefWidth="284.0" promptText="70000000000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="loginField" layoutX="34.0" layoutY="331.0" prefHeight="44.0" prefWidth="284.0" promptText="Логин">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="passwordField" layoutX="34.0" layoutY="403.0" prefHeight="44.0" prefWidth="284.0" promptText="Пароль">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="dataField" layoutX="34.0" layoutY="486.0" prefHeight="69.0" prefWidth="554.0" promptText="Обо мне">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </TextField>
+      <Button fx:id="helpPhoneBtn" layoutX="332.0" layoutY="190.0" mnemonicParsing="false" onAction="#helpPhoneBtnAction" prefHeight="51.0" prefWidth="51.0" text="?">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelBtn" layoutX="871.0" layoutY="44.0" mnemonicParsing="false" onAction="#cancelBtnAction" prefHeight="40.0" prefWidth="65.0" text="&lt;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="signUpBtn" layoutX="706.0" layoutY="485.0" mnemonicParsing="false" onAction="#signUpBtnAction" prefHeight="63.0" prefWidth="264.0" text="Зарагестрироваться">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="iconImg" fitHeight="150.0" fitWidth="200.0" layoutX="800.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
