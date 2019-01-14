@@ -14,7 +14,7 @@ package ru.ivmiit;
  * We can prioritize thread. (Exist 3 default values - MIN_PRIORITY - 1 ; NORM_PRIORITY - 5 ; MAX_PRIORITY - 10,
  * but you can add own value [1..10])
  * <p>
- * 
+ * yield() - static method, witch switch thread statement from Running to Runnable
  */
 
 public class Main {
@@ -23,6 +23,7 @@ public class Main {
         FirstCreatingWay threadOne = new FirstCreatingWay();
         Thread threadTwo = new Thread(new SecondCreatingWay());
         threadTwo.setPriority(10);
+        Thread.yield();
         threadOne.start();
         threadTwo.start();
     }
