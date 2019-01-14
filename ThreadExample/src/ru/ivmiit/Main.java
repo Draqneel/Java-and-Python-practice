@@ -8,6 +8,8 @@ package ru.ivmiit;
  * <p>
  * The way to start project only one - call of start() method (we can't do it twice). After finish thread was "dead".
  * Threads contains in pull and called by random.
+ *
+ * Thread.sleep(int ms) - thread proceed from Running statement into Sleeping for ms (millisecond);
  */
 
 public class Main {
@@ -23,6 +25,11 @@ public class Main {
 class FirstCreatingWay extends Thread {
     @Override
     public void run() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("1st thread was born");
     }
 }
