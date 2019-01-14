@@ -15,17 +15,20 @@ package ru.ivmiit;
  * but you can add own value [1..10])
  * <p>
  * yield() - static method, witch switch thread statement from Running to Runnable
+ * <p>
+ * <thread name>.join() - if thread switch status from Runnable to Running, other threads wait when it end.
  */
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         FirstCreatingWay threadOne = new FirstCreatingWay();
         Thread threadTwo = new Thread(new SecondCreatingWay());
         threadTwo.setPriority(10);
-        Thread.yield();
-        threadOne.start();
         threadTwo.start();
+        threadTwo.join();
+        threadOne.start();
+        Thread.yield();
     }
 }
 
@@ -44,12 +47,14 @@ class FirstCreatingWay extends Thread {
 class SecondCreatingWay implements Runnable {
     @Override
     public void run() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        for (int i = 0; i < 50; i++) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("2nd thread was born" + i + "nd/st times");
         }
-        System.out.println("2nd thread was born");
     }
 }
 
