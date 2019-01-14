@@ -23,7 +23,18 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         FirstCreatingWay threadOne = new FirstCreatingWay();
-        Thread threadTwo = new Thread(new SecondCreatingWay());
+        Runnable secondCreatingWay = () -> {
+            for (int i = 0; i < 50; i++) {
+                try {
+                    Thread.sleep(100);
+                    System.out.println(Thread.currentThread().getName());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("2nd thread was born" + i + "nd/st times");
+            }
+        };
+        Thread threadTwo = new Thread(secondCreatingWay);
         threadTwo.setPriority(10);
         threadTwo.start();
         threadTwo.join();
@@ -37,6 +48,7 @@ class FirstCreatingWay extends Thread {
     public void run() {
         try {
             Thread.sleep(1000);
+            System.out.println(Thread.currentThread().getName());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -44,17 +56,4 @@ class FirstCreatingWay extends Thread {
     }
 }
 
-class SecondCreatingWay implements Runnable {
-    @Override
-    public void run() {
-        for (int i = 0; i < 50; i++) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("2nd thread was born" + i + "nd/st times");
-        }
-    }
-}
 
