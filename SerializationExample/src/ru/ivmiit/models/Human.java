@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Human implements Serializable {
     private int age;
+    // transient methods not serializable after deserialization it will be contain default value
     private transient String name;
     private String phoneNumber;
 

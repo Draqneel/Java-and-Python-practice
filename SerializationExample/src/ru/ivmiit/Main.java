@@ -27,6 +27,7 @@ public class Main {
         humanList.add(manThree);
 
         // create object which can serialize java objects into bits series
+        // (object and id children must implements Serializable or Externalizable (wrapper))
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("text.txt"));
         // add objects in queue for writing
         for (Human human : humanList) {
