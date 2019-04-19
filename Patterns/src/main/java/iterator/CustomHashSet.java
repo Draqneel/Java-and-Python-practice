@@ -41,7 +41,7 @@ public class CustomHashSet<T> implements Iterable {
 
         @Override
         public boolean hasNext() {
-            return count < list.size();
+            return count < collection.size();
         }
 
         @Override
@@ -51,7 +51,11 @@ public class CustomHashSet<T> implements Iterable {
 
         @Override
         public void remove() {
-            list.remove(count--);
+            collection.remove(list.remove(count--));
+        }
+
+        public void reset(){
+            count = 0;
         }
 
     }
