@@ -3,12 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-        <bean id="message" class="MessageHelloImpl">
+        <!-- Меняем реализации Message: MessageByeImpl -> MessageHelloImpl -->
+        <bean id="message" class="MessageByeImpl">
             <constructor-arg name="text" value="Anton" />
             <constructor-arg name="smile" value=":)"/>
             <property name="suffix" value="..."/>
         </bean>
 
+        <!-- Меняем реализации MessageRenderer: MessageRendererSoutImpl -> MessageRendererErrImpl -->
         <bean id="renderer" class="MessageRendererSoutImpl">
             <constructor-arg ref="message"/>
         </bean>
