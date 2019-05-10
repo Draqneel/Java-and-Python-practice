@@ -13,5 +13,6 @@ public class MainAdapter {
         CircleFormTrashcan trashcan = new CircleFormTrashcan(15.5);
 
         System.out.println(trashcan.addTrash(new CircleTrashAdapter(squareTrash)));
+	// ssh commit test
     }
 }
